@@ -1,17 +1,11 @@
-import { Client } from 'pg'
+/* eslint-disable import/first */
 
-export const pingDb = async (): Promise<{ version: string }> => {
-  const client = new Client({
-    port: 5433,
-    user: 'postgres',
-    password: 'postgres',
-  })
+require('dotenv').config()
 
-  await client.connect()
+import * as db from './db'
 
-  const res = await client.query('SELECT version() as version')
-
-  return res.rows[0]
+const bootstrap = (): void => {
+  db.connect()
 }
 
-pingDb()
+bootstrap()
