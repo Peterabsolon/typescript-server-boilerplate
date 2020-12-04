@@ -1,3 +1,5 @@
-export const main = () => {
-  return 2
+export const main = (): string => {
+  return 3
 }
+
+// console.log(main())
