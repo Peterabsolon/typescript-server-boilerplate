@@ -1,4 +1,4 @@
-export const main = (): string => {
+export const main = (): number => {
   return 3
 }
 
