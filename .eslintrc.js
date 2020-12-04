@@ -4,7 +4,13 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['airbnb-base'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'airbnb-base',
+    'prettier',
+    'prettier/@typescript-eslint',
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 12,

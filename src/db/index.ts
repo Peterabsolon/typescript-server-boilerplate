@@ -1,4 +1,4 @@
-/* eslint-disable import/first */
+/* eslint-disable import/first, @typescript-eslint/no-var-requires */
 
 require('dotenv').config()
 
