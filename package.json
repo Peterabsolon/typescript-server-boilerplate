@@ -12,7 +12,7 @@
     "build:watch": "tsc -w -p tsconfig.json",
     "lint": "eslint . --ext .ts,.tsx",
     "format": "prettier --write src/**/*.ts",
-    "create-migration": "knex --knexfile ./src/db/knexfile.ts migrate:make $0 -x ts",
+    "knex": "knex --knexfile src/db/knexfile.ts",
     "test": "jest",
     "coverage": "jest --coverage"
   },
