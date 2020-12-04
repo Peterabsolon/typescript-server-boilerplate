@@ -13,6 +13,7 @@ module.exports = {
   plugins: ['@typescript-eslint', 'jest'],
   rules: {
     semi: 0,
+    'no-console': 0,
     'arrow-body-style': 0,
 
     'import/prefer-default-export': 0,

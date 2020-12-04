@@ -1,7 +1,8 @@
-import { main } from './index'
+import { pingDb } from './index'
 
-describe('main', () => {
-  it('works', () => {
-    expect(main()).toBe(3)
+describe('pingDb', () => {
+  it('can ping db', async () => {
+    const res = await pingDb()
+    expect(res.version.slice(0, 15)).toBe('PostgreSQL 13.0')
   })
 })
