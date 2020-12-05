@@ -1,10 +1,12 @@
 import { db } from './db'
-import { server } from './server'
+import { app } from './app'
+import { config } from './config'
 
 const bootstrap = async (): Promise<void> => {
   await db.connect()
   await db.migrate()
-  server.start()
+
+  app.listen(config.port, () => console.log(`📡 Listening on ${config.port}`))
 }
 
 bootstrap()
