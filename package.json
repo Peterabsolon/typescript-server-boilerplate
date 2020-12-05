@@ -57,12 +57,15 @@
     "@koa/cors": "^3.1.0",
     "@koa/router": "^10.0.0",
     "apollo-server-koa": "^2.19.0",
+    "class-validator": "^0.12.2",
     "dotenv": "^8.2.0",
     "graphql": "^15.4.0",
     "knex": "^0.21.12",
     "koa": "^2.13.0",
     "koa-bodyparser": "^4.3.0",
     "path": "^0.12.7",
-    "pg": "^8.5.1"
+    "pg": "^8.5.1",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.1.1"
   }
 }
