@@ -1,5 +1,3 @@
-import 'reflect-metadata'
-
 import Koa from 'koa'
 import bodyParser from 'koa-bodyparser'
 import cors from '@koa/cors'
@@ -7,10 +5,6 @@ import { ApolloServer } from 'apollo-server-koa'
 
 import { router } from './routes'
 import { schema } from './schema'
-
-export enum What {
-  Admin,
-}
 
 const app = new Koa()
 
