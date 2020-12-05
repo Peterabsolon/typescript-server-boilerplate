@@ -64,7 +64,7 @@ services:
     image: docker:stable-dind
     privileged: true
   - name: database
-    image: postgres:12
+    image: postgres:13
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: ranchitup
