@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  pg:
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_DB
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - POSTGRES_PORT
+    ports:
+      - 5432:5432
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+      - ./postgresql.conf:/etc/postgresql.conf
+
+  backup-bitch:
+    image: peterabsolon/backup-bitch:v0.0.1
+    restart: always
+    environment:
+      - PGHOST
+      - PGDATABASE
+      - PGUSER
+      - PGPORT
+      - PGPASSFILE
+    volumes:
+      - ./.pgpass:${PGPASSFILE}
+    depends_on:
+      - pg
+
+  api:
+    image: peterabsolon/typescript-server-boilerplate:v0.0.4
+    restart: always
+    environment:
+      - PGHOST
+      - PGDATABASE
+      - PGUSER
+      - PGPORT
+      - PGPASSWORD
+    ports:
+      - 80:8080
+    depends_on:
+      - pg
+
+volumes:
+  pg-data:

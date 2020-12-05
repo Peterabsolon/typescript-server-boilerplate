@@ -20,6 +20,8 @@ const migrate = async (): Promise<void> => {
   await knexClient.migrate.latest()
 
   console.log('✨ Database migrated')
+
+  knexClient.destroy()
 }
 
 const ping = async (): Promise<{ version: string }> => {

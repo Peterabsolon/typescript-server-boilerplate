@@ -7,8 +7,10 @@ export const config = {
 
   pg: {
     version: '13.0',
+    host: process.env.PGHOST || 'localhost',
+    database: process.env.PGDATABASE || 'postgres',
     port: Number(process.env.PGPORT) || 5433,
     user: process.env.PGUSER || 'postgres',
-    password: process.env.PGPASS || 'postgres',
+    password: process.env.PGPASSWORD || 'postgres',
   },
 }
