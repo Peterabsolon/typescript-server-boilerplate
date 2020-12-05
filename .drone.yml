@@ -1,9 +1,0 @@
-kind: pipeline
-type: docker
-name: default
-
-steps:
-  - name: Restore cache
-    image: ubuntu:latest
-    commands:
-      - echo "omg"
