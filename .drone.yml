@@ -34,12 +34,12 @@ steps:
     when:
       status: [success]
 
-  - name: Deploy
+  - name: Update instance
     image: peterabsolon/build-server:v0.1.31
     environment:
       HOSTNAME: '34.107.72.42'
     commands:
-      - ./deploy/deploy.sh
+      - ./deploy/update.sh
     when:
       status: [success]
 
