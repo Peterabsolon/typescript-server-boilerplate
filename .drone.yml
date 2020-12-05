@@ -1,0 +1,13 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  - name: Deploy
+    image: peterabsolon/build-server:v0.1.32
+    environment:
+      HOSTNAME: '35.246.199.15'
+    commands:
+      - echo "Sup"
+    when:
+      status: [success]
