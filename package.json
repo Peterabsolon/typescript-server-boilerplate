@@ -15,7 +15,8 @@
     "knex": "knex --knexfile src/db/knexfile.ts",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "codegen": "graphql-codegen --config codegen.yml"
   },
   "husky": {
     "hooks": {
@@ -30,6 +31,12 @@
     ]
   },
   "devDependencies": {
+    "@graphql-codegen/add": "^2.0.2",
+    "@graphql-codegen/cli": "1.19.4",
+    "@graphql-codegen/introspection": "1.18.1",
+    "@graphql-codegen/typescript": "1.19.0",
+    "@graphql-codegen/typescript-resolvers": "1.18.0",
+    "@types/graphql-iso-date": "^3.4.0",
     "@types/jest": "^26.0.16",
     "@types/koa": "^2.11.6",
     "@types/koa-bodyparser": "^4.3.0",
@@ -59,6 +66,7 @@
     "apollo-server-koa": "^2.19.0",
     "dotenv": "^8.2.0",
     "graphql": "^15.4.0",
+    "graphql-iso-date": "^3.6.1",
     "knex": "^0.21.12",
     "koa": "^2.13.0",
     "koa-bodyparser": "^4.3.0",

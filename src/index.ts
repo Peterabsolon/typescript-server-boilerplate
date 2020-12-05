@@ -6,7 +6,7 @@ const bootstrap = async (): Promise<void> => {
   await db.connect()
   await db.migrate()
 
-  app.listen(config.port, () => console.log(`📡 Listening on ${config.port}`))
+  app.listen(config.port, () => console.log(`📡 Listening on http://localhost:${config.port}`))
 }
 
 bootstrap()

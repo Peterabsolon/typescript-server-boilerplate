@@ -2,16 +2,18 @@ import Koa from 'koa'
 import bodyParser from 'koa-bodyparser'
 import cors from '@koa/cors'
 import { ApolloServer } from 'apollo-server-koa'
+import { readFileSync } from 'fs'
 
 import { router } from './routes'
-import { schema } from './schema'
+import { resolvers } from './resolvers'
 
 const app = new Koa()
 
 app.use(cors())
 app.use(bodyParser())
 
-const graphql = new ApolloServer({ schema })
+const typeDefs = readFileSync('./src/schema.gql').toString()
+const graphql = new ApolloServer({ typeDefs, resolvers })
 const graphqlHandler = graphql.getMiddleware()
 
 router.post('/graphql', graphqlHandler)

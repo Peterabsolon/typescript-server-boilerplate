@@ -11,6 +11,7 @@ module.exports = {
     'prettier',
     'prettier/@typescript-eslint',
   ],
+  ignorePatterns: ['generated/graphql.ts'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 12,
