@@ -1,0 +1,4 @@
+- Serve
+- GraphQL
+- Deploy to instance
+- Setup https

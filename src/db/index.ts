@@ -1,7 +1,3 @@
-/* eslint-disable import/first, @typescript-eslint/no-var-requires */
-
-require('dotenv').config()
-
 import { Client } from 'pg'
 
 import { config } from '../config'
@@ -19,4 +15,4 @@ const ping = async (): Promise<{ version: string }> => {
   return res.rows[0]
 }
 
-export { connect, client, ping }
+export const db = { connect, client, ping }

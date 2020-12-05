@@ -24,6 +24,8 @@ module.exports = {
 
     'import/prefer-default-export': 0,
     'import/extensions': 0,
+
+    '@typescript-eslint/no-var-requires': 0, // handled by Prettier
   },
   settings: {
     'import/resolver': {
