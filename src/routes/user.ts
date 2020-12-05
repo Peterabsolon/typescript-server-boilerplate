@@ -19,19 +19,17 @@ router.get('/:id', async (ctx) => {
 
 // Create
 router.post('/', async (ctx) => {
-  console.log('ctx', ctx.request.body)
-
-  if (!ctx.request.body.title) {
-    ctx.body = 'Title missing'
+  if (!ctx.request.body.name) {
+    ctx.body = 'Name missing'
     ctx.status = 422
     return
   }
 
   const res = await db.client.query(`
     INSERT INTO
-      users(title)
+      users(name)
     VALUES
-      ('${ctx.request.body.title}')
+      ('${ctx.request.body.name}')
     RETURNING
       *
   `)
@@ -42,8 +40,8 @@ router.post('/', async (ctx) => {
 
 // Update
 router.put('/:id', async (ctx) => {
-  if (!ctx.request.body.title) {
-    ctx.body = 'Title missing'
+  if (!ctx.request.body.name) {
+    ctx.body = 'Name missing'
     ctx.status = 422
     return
   }
@@ -52,7 +50,7 @@ router.put('/:id', async (ctx) => {
     UPDATE
       users u
     SET
-      title = '${ctx.request.body.title}'
+      name = '${ctx.request.body.name}'
     WHERE
       u.id = ${ctx.params.id}
     RETURNING
