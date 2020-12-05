@@ -1,4 +1,5 @@
 #!/bin/bash
+
 set -e
 
 python /usr/local/service_account_ssh.py \
