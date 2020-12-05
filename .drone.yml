@@ -38,6 +38,7 @@ steps:
     image: peterabsolon/build-server:v0.1.31
     environment:
       HOSTNAME: '34.107.72.42'
+      DRONE_BUILD_NUMBER: $DRONE_BUILD_NUMBER
     commands:
       - ./deploy/update.sh
     when:
