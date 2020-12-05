@@ -32,8 +32,10 @@
   "devDependencies": {
     "@types/jest": "^26.0.16",
     "@types/koa": "^2.11.6",
+    "@types/koa-bodyparser": "^4.3.0",
     "@types/koa-router": "^7.4.1",
     "@types/koa__cors": "^3.0.2",
+    "@types/koa__router": "^8.0.3",
     "@types/pg": "^7.14.7",
     "@typescript-eslint/eslint-plugin": "^4.9.0",
     "@typescript-eslint/parser": "^4.9.0",
@@ -53,10 +55,11 @@
   },
   "dependencies": {
     "@koa/cors": "^3.1.0",
+    "@koa/router": "^10.0.0",
     "dotenv": "^8.2.0",
     "knex": "^0.21.12",
     "koa": "^2.13.0",
-    "koa-router": "^10.0.0",
+    "koa-bodyparser": "^4.3.0",
     "path": "^0.12.7",
     "pg": "^8.5.1"
   }
