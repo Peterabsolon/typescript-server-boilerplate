@@ -1,5 +1,5 @@
 {
-  "name": "typescript-server-boilerplate",
+  "name": "efforts-api",
   "version": "1.0.0",
   "license": "ISC",
   "description": "",
@@ -8,7 +8,7 @@
   "scripts": {
     "start": "NODE_ENV=production node build/index.js",
     "dev": "nodemon",
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json && cp ./src/schema.gql ./build/schema.gql",
     "build:watch": "tsc -w -p tsconfig.json",
     "lint": "eslint . --ext .ts,.tsx",
     "format": "prettier --write src/**/*.ts",

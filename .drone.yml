@@ -28,9 +28,9 @@ steps:
       DOCKER_PASS:
         from_secret: DOCKER_PASS
     commands:
-      - docker build -t $DOCKER_USER/typescript-server-boilerplate:$DRONE_BUILD_NUMBER --network=host .
+      - docker build -t $DOCKER_USER/efforts-api:$DRONE_BUILD_NUMBER --network=host .
       - docker login -u $DOCKER_USER -p $DOCKER_PASS
-      - docker push $DOCKER_USER/typescript-server-boilerplate:$DRONE_BUILD_NUMBER
+      - docker push $DOCKER_USER/efforts-api:$DRONE_BUILD_NUMBER
     when:
       status: [success]
 

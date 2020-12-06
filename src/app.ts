@@ -3,6 +3,7 @@ import bodyParser from 'koa-bodyparser'
 import cors from '@koa/cors'
 import { ApolloServer } from 'apollo-server-koa'
 import { readFileSync } from 'fs'
+import path from 'path'
 
 import { router } from './routes'
 import { resolvers } from './resolvers'
@@ -12,7 +13,7 @@ const app = new Koa()
 app.use(cors())
 app.use(bodyParser())
 
-const typeDefs = readFileSync('./src/schema.gql').toString()
+const typeDefs = readFileSync(path.resolve(__dirname, 'schema.gql')).toString()
 const graphql = new ApolloServer({ typeDefs, resolvers })
 const graphqlHandler = graphql.getMiddleware()
 
