@@ -16,7 +16,7 @@ services:
       - ./postgresql.conf:/etc/postgresql.conf
 
   api:
-    image: peterabsolon/efforts-api:${DRONE_BUILD_NUMBER}
+    image: peterabsolon/typescript-server-boilerplate:${DRONE_BUILD_NUMBER}
     restart: always
     environment:
       - PGHOST
